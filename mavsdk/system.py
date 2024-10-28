@@ -403,6 +403,7 @@ class System:
 
                 logger = logging.getLogger(__name__)
                 log_thread = _LoggingThread(p.stdout, logger.debug)
+                log_thread.daemon = True
                 log_thread.start()
         except FileNotFoundError:
             print("""
